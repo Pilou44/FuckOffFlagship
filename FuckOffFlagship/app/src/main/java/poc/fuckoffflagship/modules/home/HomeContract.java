@@ -21,5 +21,6 @@ public class HomeContract {
 
     interface HomeRouter {
 
+        void showUserProfile(int id);
     }
 }

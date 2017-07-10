@@ -9,6 +9,7 @@ import poc.fuckoffflagship.modules.home.HomeContract;
 
 public class BasePresenter {
 
+    protected BaseRouter mRouter;
     protected BaseActivity mActivity;
 
     public BasePresenter(BaseActivity activity) {

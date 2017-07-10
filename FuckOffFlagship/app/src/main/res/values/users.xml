@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="id1">
+        <item>Tai</item>
+        <item>NG</item>
+        <item>Developer</item>
+        <item>Android</item>
+    </string-array>
+    <string-array name="id2">
+        <item>Guillaume</item>
+        <item>Beguin</item>
+        <item>Developer</item>
+        <item>Android</item>
+    </string-array>
+    <string-array name="id3">
+        <item>Michel</item>
+        <item>Melenchon</item>
+        <item>Developer?</item>
+        <item>iOS</item>
+    </string-array>
+</resources>

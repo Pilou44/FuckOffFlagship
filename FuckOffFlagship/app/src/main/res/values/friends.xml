@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="friends1">
+        <item>id3</item>
+        <item>id2</item>
+    </string-array>
+    <string-array name="friends2">
+        <item>id3</item>
+        <item>id1</item>
+    </string-array>
+    <string-array name="friends3">
+        <item>id1</item>
+        <item>id2</item>
+    </string-array>
+</resources>

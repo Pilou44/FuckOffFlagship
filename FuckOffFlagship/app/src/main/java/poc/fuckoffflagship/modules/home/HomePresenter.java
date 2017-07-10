@@ -11,6 +11,7 @@ import poc.fuckoffflagship.modules.core.BasePresenter;
 public class HomePresenter extends BasePresenter implements HomeContract.HomePresenter {
     public HomePresenter(HomeActivity homeActivity) {
         super(homeActivity);
+        mRouter = new HomeRouter(mActivity);
     }
 
     public void onResume() {
@@ -19,5 +20,7 @@ public class HomePresenter extends BasePresenter implements HomeContract.HomePre
 
     public void onFabClicked() {
         Toast.makeText(mActivity, "Presenter Clicked Ok", Toast.LENGTH_LONG).show();
+
+        ((HomeContract.HomeRouter) mRouter).showUserProfile(1);
     }
 }
