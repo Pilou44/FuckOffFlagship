@@ -1,24 +1,20 @@
 package poc.fuckoffflagship.modules.core;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by Guillaume on 10/07/2017.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract  class BaseFragment extends Fragment {
 
     protected BasePresenter mPresenter;
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreateView(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = createPresenter();
     }
 
     protected abstract BasePresenter createPresenter();
-
-    public int getFragmentId() {
-        return -1;
-    }
 }
