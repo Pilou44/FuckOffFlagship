@@ -9,16 +9,19 @@ import poc.fuckoffflagship.data.beans.Profile;
 public class ProfileContract {
 
     interface ProfileView {
-
+        void displayProfile(Profile profile);
     }
 
     interface ProfilePresenter {
 
         void setId(int id);
+
+        void showFriendsList();
     }
 
     interface ProfileRouter {
 
+        void showFriendsList(int id);
     }
 
     interface  ProfileInteractor {

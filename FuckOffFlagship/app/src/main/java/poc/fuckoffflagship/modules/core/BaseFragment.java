@@ -11,8 +11,7 @@ public abstract  class BaseFragment extends Fragment {
 
     protected BasePresenter mPresenter;
 
-    protected void onCreateView(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreateView() {
         mPresenter = createPresenter();
     }
 

@@ -22,9 +22,7 @@ public class UserContract {
     }
 
     interface UserRouter {
-
         void showProfile(int id);
 
-        void setActivity(BaseActivity activity);
     }
 }

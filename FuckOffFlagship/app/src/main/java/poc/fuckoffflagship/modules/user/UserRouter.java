@@ -4,15 +4,21 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 import poc.fuckoffflagship.modules.core.BaseActivity;
+import poc.fuckoffflagship.modules.core.BaseRouter;
 import poc.fuckoffflagship.modules.profile.ProfileFragment;
 
 /**
  * Created by Guillaume on 10/07/2017.
  */
 
-public class UserRouter implements UserContract.UserRouter {
+public class UserRouter extends BaseRouter implements UserContract.UserRouter {
 
     private BaseActivity mActivity;
+
+    public UserRouter(BaseActivity activity) {
+        super(activity);
+        mActivity = activity;
+    }
 
     @Override
     public void showProfile(int id) {
@@ -24,10 +30,5 @@ public class UserRouter implements UserContract.UserRouter {
         fragment.setArguments(args);
         transaction.add(mActivity.getFragmentId(), fragment);
         transaction.commit();
-    }
-
-    @Override
-    public void setActivity(BaseActivity activity) {
-        mActivity = activity;
     }
 }

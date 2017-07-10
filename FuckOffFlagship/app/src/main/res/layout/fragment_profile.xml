@@ -37,6 +37,12 @@
             android:layout_marginBottom="20dp"
             android:text="os"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_friends_button"
+            android:text="Show friends"/>
+
     </LinearLayout>
 
 </FrameLayout>

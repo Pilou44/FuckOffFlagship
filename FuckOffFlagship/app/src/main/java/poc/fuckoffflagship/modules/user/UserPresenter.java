@@ -10,7 +10,7 @@ public class UserPresenter extends BasePresenter implements UserContract.UserPre
 
     public UserPresenter(UserActivity userActivity) {
         super(userActivity);
-        ((UserContract.UserRouter) mRouter).setActivity(userActivity);
+        mRouter = new UserRouter(mActivity);
     }
 
     @Override
