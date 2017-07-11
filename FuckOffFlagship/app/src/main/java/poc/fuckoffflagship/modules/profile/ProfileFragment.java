@@ -67,6 +67,6 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Pro
         mLastname.setText(profile.getLastname());
         mFunction.setText(profile.getFunction());
         mFunctionOs.setText(profile.getFunctionOs());
-        Picasso.with(getActivity()).load(profile.getPictureUrl()).into(mImage);
+        Picasso.with(getActivity()).load(profile.getPictureUrl()).resize(1000, 800).centerInside().into(mImage);
     }
 }
