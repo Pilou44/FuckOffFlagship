@@ -11,21 +11,27 @@ import poc.fuckoffflagship.modules.core.BasePresenter;
 
 public class ContactListPresenter extends BasePresenter implements ContactListContract.ContactListPresenter {
 
-    private final ContactListContract.ContactListInteractor mInteractor;
-    private int mId;
+    private ContactListContract.ContactListInteractor mInteractor;
 
     public ContactListPresenter(BaseFragment fragment, BaseActivity activity) {
         super(fragment, activity);
+        init(activity);
+    }
+
+    public ContactListPresenter(ContactListActivity activity) {
+        super(activity);
+        init(activity);
+    }
+
+    private void init(BaseActivity activity) {
         mInteractor = new ContactListInteractor(activity);
         mRouter = new ContactListRouter(activity);
     }
 
     @Override
     public void setId(int id) {
-        mId = id;
-
         String ids[] = mInteractor.getIds(id);
-        ((ContactListContract.ContactListView) mFragment).populate(ids);
+        ((ContactListContract.ContactListView) mView).populate(ids);
     }
 
     @Override
@@ -34,8 +40,8 @@ public class ContactListPresenter extends BasePresenter implements ContactListCo
     }
 
     @Override
-    public void onProfileClicked(int id) {
-        ((ContactListContract.ContactListRouter) mRouter).showProfile(id);
+    public void onProfileClicked(int viewType, int id) {
+        ((ContactListContract.ContactListRouter) mRouter).showProfile(viewType, id);
     }
 
 }

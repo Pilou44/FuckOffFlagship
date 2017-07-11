@@ -12,7 +12,8 @@ public class HomeContract {
 
     interface HomePresenter {
         void onResume();
-        void onFabClicked();
+        void onFab1Clicked();
+        void onFab2Clicked();
     }
 
     interface HomeInteractor {
@@ -21,6 +22,6 @@ public class HomeContract {
 
     interface HomeRouter {
 
-        void showUserProfile(int id);
+        void showUserProfile(int viewType, int id);
     }
 }

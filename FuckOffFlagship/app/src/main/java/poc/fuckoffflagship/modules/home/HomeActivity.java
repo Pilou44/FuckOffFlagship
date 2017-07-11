@@ -25,11 +25,19 @@ public class HomeActivity extends BaseActivity implements HomeContract.HomeView 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((HomeContract.HomePresenter)mPresenter).onFabClicked();
+                ((HomeContract.HomePresenter)mPresenter).onFab1Clicked();
+            }
+        });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((HomeContract.HomePresenter)mPresenter).onFab2Clicked();
             }
         });
 

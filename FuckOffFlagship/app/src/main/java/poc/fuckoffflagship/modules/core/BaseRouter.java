@@ -7,6 +7,9 @@ import android.content.Context;
  */
 
 public class BaseRouter {
+    public static final int USE_ACTIVITIES = 0;
+    public static final int USE_FRAGMENTS = 1;
+
     protected final Context mContext;
 
     public BaseRouter(Context context) {

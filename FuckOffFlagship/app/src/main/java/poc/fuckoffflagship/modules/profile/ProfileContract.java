@@ -16,12 +16,12 @@ public class ProfileContract {
 
         void setId(int id);
 
-        void showFriendsList();
+        void showFriendsList(int viewType);
     }
 
     interface ProfileRouter {
 
-        void showFriendsList(int id);
+        void showFriendsList(int viewType, int id);
     }
 
     interface  ProfileInteractor {

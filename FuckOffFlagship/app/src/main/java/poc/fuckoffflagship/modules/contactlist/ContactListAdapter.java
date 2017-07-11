@@ -22,13 +22,15 @@ public class ContactListAdapter extends RecyclerView.Adapter {
 
     private final Context mContext;
     private final ContactListContract.ContactListPresenter mPresenter;
+    private final int mViewType;
     private List<Integer> mIds;
 
-    public ContactListAdapter(Context context, ContactListContract.ContactListPresenter presenter) {
+    public ContactListAdapter(Context context, ContactListContract.ContactListPresenter presenter, int viewType) {
         super();
         mContext = context;
         mPresenter = presenter;
         mIds = new ArrayList<>();
+        mViewType = viewType;
     }
 
 
@@ -72,7 +74,7 @@ public class ContactListAdapter extends RecyclerView.Adapter {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mPresenter.onProfileClicked(mId);
+                    mPresenter.onProfileClicked(mViewType, mId);
                 }
             });
         }

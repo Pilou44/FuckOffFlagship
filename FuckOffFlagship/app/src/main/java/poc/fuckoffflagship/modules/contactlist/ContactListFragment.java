@@ -12,6 +12,7 @@ import poc.fuckoffflagship.R;
 import poc.fuckoffflagship.modules.core.BaseActivity;
 import poc.fuckoffflagship.modules.core.BaseFragment;
 import poc.fuckoffflagship.modules.core.BasePresenter;
+import poc.fuckoffflagship.modules.core.BaseRouter;
 
 /**
  * Created by Guillaume on 10/07/2017.
@@ -35,7 +36,7 @@ public class ContactListFragment extends BaseFragment implements ContactListCont
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rv);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        mContactListAdapter = new ContactListAdapter(this.getActivity(), (ContactListContract.ContactListPresenter) mPresenter);
+        mContactListAdapter = new ContactListAdapter(this.getActivity(), (ContactListContract.ContactListPresenter) mPresenter, BaseRouter.USE_FRAGMENTS);
         mRecyclerView.setAdapter(mContactListAdapter);
         int id = getArguments().getInt("id");
         ((ContactListContract.ContactListPresenter) mPresenter).setId(id);

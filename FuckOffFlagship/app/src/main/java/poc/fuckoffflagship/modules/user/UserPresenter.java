@@ -1,5 +1,6 @@
 package poc.fuckoffflagship.modules.user;
 
+import poc.fuckoffflagship.modules.core.BaseActivity;
 import poc.fuckoffflagship.modules.core.BasePresenter;
 
 /**
@@ -10,7 +11,7 @@ public class UserPresenter extends BasePresenter implements UserContract.UserPre
 
     public UserPresenter(UserActivity userActivity) {
         super(userActivity);
-        mRouter = new UserRouter(mActivity);
+        mRouter = new UserRouter((BaseActivity) mView);
     }
 
     @Override

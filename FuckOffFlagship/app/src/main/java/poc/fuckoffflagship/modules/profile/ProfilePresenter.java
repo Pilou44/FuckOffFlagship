@@ -10,11 +10,20 @@ import poc.fuckoffflagship.modules.core.BasePresenter;
 
 public class ProfilePresenter extends BasePresenter implements ProfileContract.ProfilePresenter {
 
-    private final ProfileContract.ProfileInteractor mInteractor;
+    private ProfileContract.ProfileInteractor mInteractor;
     private int mId;
 
     public ProfilePresenter(ProfileFragment profileFragment, BaseActivity activity) {
         super(profileFragment, activity);
+        init(activity);
+    }
+
+    public ProfilePresenter(ProfileActivity activity) {
+        super(activity);
+        init(activity);
+    }
+
+    private void init(BaseActivity activity) {
         mInteractor = new ProfileInteractor(activity);
         mRouter = new ProfileRouter(activity);
     }
@@ -23,11 +32,11 @@ public class ProfilePresenter extends BasePresenter implements ProfileContract.P
     public void setId(int id) {
         mId = id;
         Profile profile = mInteractor.getProfile(id);
-        ((ProfileContract.ProfileView) mFragment).displayProfile(profile);
+        ((ProfileContract.ProfileView) mView).displayProfile(profile);
     }
 
     @Override
-    public void showFriendsList() {
-        ((ProfileContract.ProfileRouter) mRouter).showFriendsList(mId);
+    public void showFriendsList(int viewType) {
+        ((ProfileContract.ProfileRouter) mRouter).showFriendsList(viewType, mId);
     }
 }

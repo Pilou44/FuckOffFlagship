@@ -1,5 +1,7 @@
 package poc.fuckoffflagship.modules.core;
 
+import android.content.Context;
+
 import poc.fuckoffflagship.modules.home.HomeActivity;
 import poc.fuckoffflagship.modules.home.HomeContract;
 import poc.fuckoffflagship.modules.profile.ProfileFragment;
@@ -10,17 +12,18 @@ import poc.fuckoffflagship.modules.profile.ProfileFragment;
 
 public class BasePresenter {
 
-    protected BaseFragment mFragment;
+    protected Object mView;
     protected BaseRouter mRouter;
-    protected BaseActivity mActivity;
+    protected Context mContext;
 
     public BasePresenter(BaseActivity activity) {
-        mActivity = activity;
+        mView = activity;
+        mContext = activity;
     }
 
 
     public BasePresenter(BaseFragment fragment, BaseActivity activity) {
-        mFragment = fragment;
-        mActivity = activity;
+        mView = fragment;
+        mContext = activity;
     }
 }

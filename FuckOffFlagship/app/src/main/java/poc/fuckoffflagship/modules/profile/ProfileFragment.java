@@ -46,7 +46,7 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Pro
         mShowFriendsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ProfileContract.ProfilePresenter) mPresenter).showFriendsList();
+                ((ProfileContract.ProfilePresenter) mPresenter).showFriendsList(ProfileRouter.USE_FRAGMENTS);
             }
         });
 

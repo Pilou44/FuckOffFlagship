@@ -11,16 +11,22 @@ import poc.fuckoffflagship.modules.core.BasePresenter;
 public class HomePresenter extends BasePresenter implements HomeContract.HomePresenter {
     public HomePresenter(HomeActivity homeActivity) {
         super(homeActivity);
-        mRouter = new HomeRouter(mActivity);
+        mRouter = new HomeRouter(mContext);
     }
 
     public void onResume() {
-        ((HomeContract.HomeView) mActivity).updateMessage("Fuck Off Flagship");
+        ((HomeContract.HomeView) mView).updateMessage("Fuck Off Flagship");
     }
 
-    public void onFabClicked() {
-        Toast.makeText(mActivity, "Presenter Clicked Ok", Toast.LENGTH_LONG).show();
+    public void onFab1Clicked() {
+        Toast.makeText(mContext, "Presenter Clicked Ok  --> Activity", Toast.LENGTH_LONG).show();
 
-        ((HomeContract.HomeRouter) mRouter).showUserProfile(1);
+        ((HomeContract.HomeRouter) mRouter).showUserProfile(HomeRouter.USE_ACTIVITIES, 1);
+    }
+
+    public void onFab2Clicked() {
+        Toast.makeText(mContext, "Presenter Clicked Ok --> Fragment", Toast.LENGTH_LONG).show();
+
+        ((HomeContract.HomeRouter) mRouter).showUserProfile(HomeRouter.USE_FRAGMENTS, 1);
     }
 }

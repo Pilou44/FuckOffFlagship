@@ -17,7 +17,7 @@ public class ContactListContract {
 
         Profile getProfile(int id);
 
-        void onProfileClicked(int id);
+        void onProfileClicked(int viewType, int id);
     }
 
     interface ContactListInteractor {
@@ -29,6 +29,6 @@ public class ContactListContract {
 
     interface ContactListRouter {
 
-        void showProfile(int id);
+        void showProfile(int viewType, int id);
     }
 }
