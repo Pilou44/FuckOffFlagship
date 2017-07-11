@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import poc.fuckoffflagship.R;
 import poc.fuckoffflagship.data.beans.Profile;
+import poc.fuckoffflagship.domain.usecases.GetProfileUseCase;
 import poc.fuckoffflagship.modules.core.BaseActivity;
 import poc.fuckoffflagship.modules.core.BaseInteractor;
 
@@ -16,9 +17,11 @@ import poc.fuckoffflagship.modules.core.BaseInteractor;
 public class ContactListInteractor extends BaseInteractor implements ContactListContract.ContactListInteractor{
 
     private final HashMap<Integer, Integer> mIds;
+    private final GetProfileUseCase mGetProfileUseCase;
 
     public ContactListInteractor(Context context) {
         super(context);
+        mGetProfileUseCase = new GetProfileUseCase(context);
 
         mIds = new HashMap<>();
         mIds.put(1, R.array.friends1);
@@ -33,5 +36,10 @@ public class ContactListInteractor extends BaseInteractor implements ContactList
         } else {
             return null;
         }
+    }
+
+    @Override
+    public Profile getProfile(int id) {
+        return mGetProfileUseCase.execute(id);
     }
 }

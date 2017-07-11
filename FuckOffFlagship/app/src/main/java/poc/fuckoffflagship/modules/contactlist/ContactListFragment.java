@@ -33,7 +33,10 @@ public class ContactListFragment extends BaseFragment implements ContactListCont
         View view = inflater.inflate(R.layout.fragment_contact_list, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rv);
-
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        mContactListAdapter = new ContactListAdapter(this.getActivity(), (ContactListContract.ContactListPresenter) mPresenter);
+        mRecyclerView.setAdapter(mContactListAdapter);
         int id = getArguments().getInt("id");
         ((ContactListContract.ContactListPresenter) mPresenter).setId(id);
 
@@ -41,22 +44,12 @@ public class ContactListFragment extends BaseFragment implements ContactListCont
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        mContactListAdapter = new ContactListAdapter(this.getActivity(), (ContactListContract.ContactListPresenter) mPresenter);
-        mRecyclerView.setAdapter(mContactListAdapter);
-
-    }
-
-    @Override
     protected BasePresenter createPresenter() {
-        return new BasePresenter(this, (BaseActivity) getActivity());
+        return new ContactListPresenter(this, (BaseActivity) getActivity());
     }
 
     @Override
     public void populate(String[] ids) {
-
+        mContactListAdapter.addValues(ids);
     }
 }

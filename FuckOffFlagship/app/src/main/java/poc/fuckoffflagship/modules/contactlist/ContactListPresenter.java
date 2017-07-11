@@ -17,6 +17,7 @@ public class ContactListPresenter extends BasePresenter implements ContactListCo
     public ContactListPresenter(BaseFragment fragment, BaseActivity activity) {
         super(fragment, activity);
         mInteractor = new ContactListInteractor(activity);
+        mRouter = new ContactListRouter(activity);
     }
 
     @Override
@@ -25,6 +26,16 @@ public class ContactListPresenter extends BasePresenter implements ContactListCo
 
         String ids[] = mInteractor.getIds(id);
         ((ContactListContract.ContactListView) mFragment).populate(ids);
+    }
+
+    @Override
+    public Profile getProfile(int id) {
+        return mInteractor.getProfile(id);
+    }
+
+    @Override
+    public void onProfileClicked(int id) {
+        ((ContactListContract.ContactListRouter) mRouter).showProfile(id);
     }
 
 }

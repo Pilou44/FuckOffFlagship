@@ -14,14 +14,21 @@ public class ContactListContract {
 
     interface ContactListPresenter {
         void setId(int id);
+
+        Profile getProfile(int id);
+
+        void onProfileClicked(int id);
     }
 
     interface ContactListInteractor {
 
         String[] getIds(int id);
+
+        Profile getProfile(int id);
     }
 
     interface ContactListRouter {
 
+        void showProfile(int id);
     }
 }
