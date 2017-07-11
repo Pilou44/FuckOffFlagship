@@ -30,6 +30,7 @@ public class ContactListRouter extends BaseRouter implements ContactListContract
         args.putInt("id", id);
         fragment.setArguments(args);
         transaction.replace(mActivity.getFragmentId(), fragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 }

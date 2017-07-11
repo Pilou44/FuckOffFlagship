@@ -30,6 +30,7 @@ public class ProfileRouter extends BaseRouter implements ProfileContract.Profile
         args.putInt("id", id);
         fragment.setArguments(args);
         transaction.replace(mActivity.getFragmentId(), fragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 }
