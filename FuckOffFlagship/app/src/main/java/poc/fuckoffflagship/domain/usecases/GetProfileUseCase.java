@@ -29,7 +29,7 @@ public class GetProfileUseCase {
 
         if (id >= 1 && id <= 3) {
             String[] profileTab = mContext.getResources().getStringArray(mIds.get(id));
-            return new Profile(profileTab[0], profileTab[1], profileTab[2], profileTab[3]);
+            return new Profile(profileTab[0], profileTab[1], profileTab[2], profileTab[3], profileTab[4]);
         } else {
             return null;
         }

@@ -5,17 +5,20 @@
         <item>NG</item>
         <item>Developer</item>
         <item>Android</item>
+        <item>https://i.ytimg.com/vi/phdkWPnlQ4g/maxresdefault.jpg</item>
     </string-array>
     <string-array name="id2">
         <item>Guillaume</item>
         <item>Beguin</item>
         <item>Developer</item>
         <item>Android</item>
+        <item>https://images.alphacoders.com/465/thumb-1920-465254.jpg</item>
     </string-array>
     <string-array name="id3">
         <item>Michel</item>
         <item>Enchon</item>
         <item>Developer</item>
         <item>iOS</item>
+        <item>http://cdn1-europe1.new2.ladmedia.fr/var/europe1/storage/images/le-lab/jean-luc-melenchon-annonce-avoir-obtenu-ses-500-parrainages-pour-la-presidentielle-3000041/33364040-1-fre-FR/Jean-Luc-Melenchon-annonce-avoir-obtenu-ses-500-parrainages-pour-la-presidentielle.jpg</item>
     </string-array>
 </resources>

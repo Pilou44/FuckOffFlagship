@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import poc.fuckoffflagship.R;
 import poc.fuckoffflagship.data.beans.Profile;
@@ -22,6 +25,7 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Pro
     private TextView mFunction;
     private TextView mFunctionOs;
     private Button mShowFriendsButton;
+    private ImageView mImage;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -33,6 +37,7 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Pro
         super.onCreateView();
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        mImage = (ImageView) view.findViewById(R.id.image);
         mName = (TextView) view.findViewById(R.id.user_name);
         mLastname = (TextView) view.findViewById(R.id.user_lastname);
         mFunction = (TextView) view.findViewById(R.id.user_function);
@@ -62,5 +67,6 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Pro
         mLastname.setText(profile.getLastname());
         mFunction.setText(profile.getFunction());
         mFunctionOs.setText(profile.getFunctionOs());
+        Picasso.with(getActivity()).load(profile.getPictureUrl()).into(mImage);
     }
 }
