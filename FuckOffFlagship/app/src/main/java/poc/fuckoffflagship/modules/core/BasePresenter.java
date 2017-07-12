@@ -2,10 +2,6 @@ package poc.fuckoffflagship.modules.core;
 
 import android.content.Context;
 
-import poc.fuckoffflagship.modules.home.HomeActivity;
-import poc.fuckoffflagship.modules.home.HomeContract;
-import poc.fuckoffflagship.modules.profile.ProfileFragment;
-
 /**
  * Created by Guillaume on 10/07/2017.
  */

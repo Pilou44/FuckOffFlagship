@@ -1,7 +1,7 @@
 package poc.fuckoffflagship.modules.core;
 
-import android.app.Fragment;
-import android.os.Bundle;
+
+import android.support.v4.app.Fragment;
 
 /**
  * Created by Guillaume on 10/07/2017.

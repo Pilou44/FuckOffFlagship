@@ -1,9 +1,5 @@
 package poc.fuckoffflagship.modules.user;
 
-import android.support.v7.app.AppCompatActivity;
-
-import poc.fuckoffflagship.modules.core.BaseActivity;
-
 /**
  * Created by Guillaume on 10/07/2017.
  */

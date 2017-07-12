@@ -1,7 +1,7 @@
 package poc.fuckoffflagship.modules.user;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 
 import poc.fuckoffflagship.modules.core.BaseActivity;
 import poc.fuckoffflagship.modules.core.BaseRouter;
@@ -22,7 +22,7 @@ public class UserRouter extends BaseRouter implements UserContract.UserRouter {
 
     @Override
     public void showProfile(int id) {
-        FragmentTransaction transaction = mActivity.getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
 
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();

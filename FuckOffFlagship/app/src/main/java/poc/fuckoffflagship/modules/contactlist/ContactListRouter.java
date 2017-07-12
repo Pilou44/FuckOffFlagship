@@ -1,9 +1,8 @@
 package poc.fuckoffflagship.modules.contactlist;
 
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 
 import poc.fuckoffflagship.modules.core.BaseActivity;
 import poc.fuckoffflagship.modules.core.BaseRouter;
@@ -27,7 +26,7 @@ public class ContactListRouter extends BaseRouter implements ContactListContract
     public void showProfile(int viewType, int id) {
         switch (viewType) {
             case USE_FRAGMENTS:
-                FragmentTransaction transaction = mActivity.getFragmentManager().beginTransaction();
+                FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
 
                 ProfileFragment fragment = new ProfileFragment();
                 Bundle args = new Bundle();

@@ -2,10 +2,6 @@ package poc.fuckoffflagship.modules.profile;
 
 import android.content.Context;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import poc.fuckoffflagship.R;
 import poc.fuckoffflagship.data.beans.Profile;
 import poc.fuckoffflagship.domain.usecases.GetProfileUseCase;
 import poc.fuckoffflagship.modules.core.BaseInteractor;
