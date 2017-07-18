@@ -14,7 +14,7 @@ public class ProfilePresenter extends BasePresenter implements ProfileContract.P
     private int mId;
 
     public ProfilePresenter(ProfileFragment profileFragment, BaseActivity activity) {
-        super(profileFragment, activity);
+        super(profileFragment);
         init(activity);
     }
 

@@ -17,7 +17,7 @@ public class DisneyPresenter extends BasePresenter implements DisneyContract.Pre
     private final DisneyContract.Interactor mInteractor;
 
     public DisneyPresenter(DisneyFragment fragment, BaseActivity activity) {
-        super(fragment, activity);
+        super(fragment);
         mInteractor = new DisneyInteractor(activity);
     }
 

@@ -12,14 +12,12 @@ public class BasePresenter {
     protected BaseRouter mRouter;
     protected Context mContext;
 
-    public BasePresenter(BaseActivity activity) {
-        mView = activity;
-        mContext = activity;
-    }
-
-
-    public BasePresenter(BaseFragment fragment, BaseActivity activity) {
-        mView = fragment;
-        mContext = activity;
+    public BasePresenter(Object view) {
+        mView = view;
+        if (view instanceof BaseActivity) {
+            mContext = (Context) view;
+        } else if (view instanceof BaseFragment) {
+            mContext = ((BaseFragment) view).getContext();
+        }
     }
 }

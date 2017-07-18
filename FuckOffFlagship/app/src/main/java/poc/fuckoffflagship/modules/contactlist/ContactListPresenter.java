@@ -14,7 +14,7 @@ public class ContactListPresenter extends BasePresenter implements ContactListCo
     private ContactListContract.ContactListInteractor mInteractor;
 
     public ContactListPresenter(BaseFragment fragment, BaseActivity activity) {
-        super(fragment, activity);
+        super(fragment);
         init(activity);
     }
 

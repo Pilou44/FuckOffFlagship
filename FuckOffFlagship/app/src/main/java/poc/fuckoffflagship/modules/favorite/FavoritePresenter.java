@@ -16,7 +16,7 @@ public class FavoritePresenter extends BasePresenter implements FavoriteContract
     private final FavoriteContract.Interactor mInteractor;
 
     public FavoritePresenter(BaseFragment fragment, BaseActivity activity) {
-        super(fragment, activity);
+        super(fragment);
         mInteractor = new FavoriteInteractor(activity);
     }
 

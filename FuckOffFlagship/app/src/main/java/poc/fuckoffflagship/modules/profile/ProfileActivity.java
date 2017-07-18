@@ -44,7 +44,9 @@ public class ProfileActivity extends BaseActivity implements ProfileContract.Pro
         });
 
         int id = getIntent().getIntExtra("id", -1);
-        ((ProfileContract.ProfilePresenter) mPresenter).setId(id);
+        if (id > 0) {
+            ((ProfileContract.ProfilePresenter) mPresenter).setId(id);
+        }
     }
 
     @Override
