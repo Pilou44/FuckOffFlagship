@@ -55,7 +55,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.HomeView 
         mPager.setAdapter(mPagertAdapter);
 
         mTabLayout.getTabAt(0).setText("Profile");
-        mTabLayout.getTabAt(1).setText("Jobs");
+        mTabLayout.getTabAt(1).setText("Disney");
         mTabLayout.getTabAt(2).setText("Network");
     }
 

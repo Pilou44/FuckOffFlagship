@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="disney">
+        <item>Mickey</item>
+        <item>Donald</item>
+        <item>Dingo</item>
+        <item>Pluto</item>
+        <item>Tigrou</item>
+        <item>Winnie</item>
+        <item>Bourriquet</item>
+    </string-array>
+</resources>

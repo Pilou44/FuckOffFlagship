@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import poc.fuckoffflagship.modules.disneylist.DisneyFragment;
+import poc.fuckoffflagship.modules.favorite.FavoriteFragment;
 import poc.fuckoffflagship.modules.profile.ProfileFragment;
 
 class HomePagerAdapter extends FragmentPagerAdapter {
@@ -21,9 +23,9 @@ class HomePagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return getProfileFragment();
             case 1:
-                return new Fragment();
+                return new DisneyFragment();
             case 2:
-                return new Fragment();
+                return new FavoriteFragment();
             default:
                 return new Fragment();
         }
