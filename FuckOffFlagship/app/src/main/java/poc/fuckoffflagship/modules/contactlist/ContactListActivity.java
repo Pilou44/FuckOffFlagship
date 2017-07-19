@@ -28,7 +28,9 @@ public class ContactListActivity extends BaseActivity implements ContactListCont
         mContactListAdapter = new ContactListAdapter(this, (ContactListContract.ContactListPresenter) mPresenter, BaseRouter.USE_ACTIVITIES);
         mRecyclerView.setAdapter(mContactListAdapter);
         int id = getIntent().getIntExtra("id", -1);
-        ((ContactListContract.ContactListPresenter) mPresenter).setId(id);
+        if (id > 0) {
+            ((ContactListContract.ContactListPresenter) mPresenter).setId(id);
+        }
     }
 
     @Override

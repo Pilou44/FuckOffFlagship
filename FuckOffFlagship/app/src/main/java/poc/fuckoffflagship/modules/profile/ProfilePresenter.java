@@ -32,6 +32,7 @@ public class ProfilePresenter extends BasePresenter implements ProfileContract.P
     public void setId(int id) {
         mId = id;
         Profile profile = mInteractor.getProfile(id);
+
         ((ProfileContract.ProfileView) mView).displayProfile(profile);
     }
 
