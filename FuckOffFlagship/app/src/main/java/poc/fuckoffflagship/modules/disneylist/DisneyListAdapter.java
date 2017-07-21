@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -38,11 +39,19 @@ public class DisneyListAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         Disney disney = mPresenter.getDisneyList().get(position);
         ((ItemDisneyProfile) holder).mName.setText(disney.getName());
         ((ItemDisneyProfile) holder).mChecked.setChecked(disney.isChecked());
         ((ItemDisneyProfile) holder).mChecked.setTag(disney);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, ((ItemDisneyProfile) holder).mName.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override

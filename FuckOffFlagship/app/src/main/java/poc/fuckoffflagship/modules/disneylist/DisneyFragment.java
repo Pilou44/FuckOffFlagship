@@ -34,7 +34,7 @@ public class DisneyFragment extends BaseFragment implements DisneyContract.View 
         View view = inflater.inflate(R.layout.fragment_disney, container, false);
         super.onCreateView();
 
-        mRecycler = (RecyclerView) view.findViewById(R.id.rv);
+        mRecycler = (RecyclerView) view.findViewById(R.id.disney_rv);
         mRecycler.setHasFixedSize(true);
         mRecycler.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         mDisneyAdapter = new DisneyListAdapter(this.getActivity(), (DisneyContract.Presenter) mPresenter);
